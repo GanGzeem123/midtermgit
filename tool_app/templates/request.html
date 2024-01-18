@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<center>
+    <style>
+        font-family: 'Noto Serif Thai', serif;
+    </style>
+<div class="container">
+    <br /> <br />
+<h1>เบิกเครื่องมือ</h1>
+ชื่อเครื่องมือ : <select name="drug_id">
+    {% for i in tooldata %}
+        <option value="{{i.drug_id}}">{{i.drug_name}}</option>
+    {% endfor %}
+        </select>
+จำนวน : <input type="number" min="0" max="10">
+ชื่อคนเบิก : <input type="text" name="username" value="{{user.username}}">
+<input type="submit">
+</div>
+</center>
+</body>
+{% endblock content %}
+
+

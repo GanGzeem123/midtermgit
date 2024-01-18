@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+    <head>
+        <title>tool app</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <style>
+          body {
+            font-family: 'Noto Serif Thai', serif;
+                  }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#"><i class="fa-solid fa-screwdriver-wrench"></i> ระบบบันทึกข้อมูลเครื่องมือช่าง</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex ms-auto"> <!-- Add ms-auto to push the items to the right -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="request">เบิกเครื่องมือ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="reportrequest">รายการเบิก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="go_login">เข้าสู่ระบบ</a>
+                                </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <div class="container ">
+            {% include 'msg.html' %}
+            {% block content%} 
+            {% endblock %}
+          </div>
+    </body>
+</html>
